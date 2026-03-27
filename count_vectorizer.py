@@ -10,7 +10,9 @@ docs = [
 
 # TODO: Initialize CountVectorizer with n-gram range for unigrams only
 vectorizer = CountVectorizer(ngram_range=(1, 1))
-
+# Print the vocabulary learned by the vectorizer
+print("Vocabulary:", vectorizer.get_feature_names_out())
 
 # TODO: Convert to DataFrame for better visualization
 df = pd.DataFrame(vectorizer.fit_transform(docs).toarray(), columns=vectorizer.get_feature_names_out())
+print(df)
